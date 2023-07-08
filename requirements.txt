@@ -1,8 +1,7 @@
 django==4.2.1
 django-tinymce==3.6.1
-ipython==8.14.0
 mysqlclient==2.1.1
 nepali-datetime==1.0.7
 pillow==9.5.0
 pip-chill==1.0.3
-psycopg2==2.9.6
+
