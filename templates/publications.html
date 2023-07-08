@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title%} Publications and Reports {% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/publications.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<p class="publication-heading"> Pulications and Reports </p>
+{% for publication in publications %}
+    <div class="publication-item">
+        <p class="publication-title"> {{publication.title}}</p>
+        <p class="publication-description"> {{publication.description}}</p> <br/>
+        <p class="publication-instruction"> Please click the link below to download the report: </p>
+        <a href="{{publication.report_file.url}}" alt="{{publication.title}}" download> {{publication.file_name}}</a>
+        <p class="publication-creator"> Created by: {{publication.created_by}}</p>
+        <p class="publication-creator"> Created date: {{publication.created_date}}</p>
+    </div>
+{% endfor %}
+
+
+{% endblock %}
+
+

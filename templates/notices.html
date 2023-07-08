@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %} 
+{% load static %} 
+
+{% block title%} Notices {%endblock%} 
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'css/notices.css' %}" />
+{% endblock %} 
+
+{% block content %}
+<h1 style="display: none;"> Notice </h1>
+<div class="notice">
+  <h3 class="notice-heading">Notices</h3>
+  <ul class="notice-list">
+    {% for notice in notices %}
+      <li>
+        <a href="{% url 'notice-detail' notice.slug %}">{{notice.title}}</a>
+        <p>Issued date: {{notice.issued_date}}</p>
+      </li>
+
+    {% endfor %}
+  </ul>
+</div>
+{% endblock%}

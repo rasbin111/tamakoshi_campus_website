@@ -1,0 +1,86 @@
+{% extends 'base/base.html' %} 
+{% load static %} 
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'css/home.css' %}" />
+{% endblock %} 
+
+{% block content %}
+
+<div class="background first-section">
+  <div class="box-main">
+    <h1> Tamakoshi Campus (Affiliated to Tribhuvan University)</h1>
+    <blockquote>" Learning is a treasure that will follow its owner everywhere."</blockquote> 
+  </div>
+</div>
+
+<div class="welcome">
+  <div class="welcome-first">
+    <h3> Welcome to our campus </h3>
+    <p>
+      Welcome to our vibrant campus! Nestled amidst lush greenery, 
+      our campus is a thriving hub of academic excellence and diverse opportunities. 
+      With state-of-the-art facilities and a stimulating learning environment, 
+      we foster intellectual growth and personal development. Our dedicated faculty 
+      members are committed to nurturing talents, encouraging innovation, and shaping future leaders. 
+      Students here engage in a wide range of extracurricular activities, clubs, and organizations that 
+      enhance their holistic growth. Our campus promotes inclusivity, cultural exchange, and community engagement, 
+      ensuring a well-rounded education. We invite you to explore our beautiful grounds, meet our talented community, 
+      and embark on an enriching educational journey with us. Welcome to our campus!
+    </p>
+  </div>
+  <div class="welcome-second">
+    <h3> Welcome to our Campus </h3>
+    <img src="{% static 'images/students.jpg' %}"/>
+  </div>
+</div>
+
+<div class="facilities">
+  <h3> Our Facilities </h3>
+  <ul class="facility-list">
+    {% for facility in facilities %}
+    <li class="facility"> 
+      <section class="facility-first-part">
+        <h4> {{facility.title}}</h4>
+        <p> {{facility.description}} </p>
+      </section>
+      <section class="facility-second-part">
+        <h4> {{facility.title}}</h4>
+        <img src="{{facility.image.url}}" alt="{{facility.title}}">
+      </section>
+    </li>
+
+
+  {% endfor %}
+  </ul>
+</div>
+
+<div class="testimon">
+  <h3> Testimonials </h3>
+  <ul class="testimonials">
+    {% for testimonial in testimonials%}
+    <li class="testimonial fade">
+      <div class="testimonial-first-column">
+        <blockquote>"{{testimonial.description}}"</blockquote>
+      </div>
+      <div class="testimonial-second-column">
+          <p class="person-name"> {{testimonial.name}} </p>
+          <p class="person-extra"> 
+            <!-- {{testimonial.gpa}} GPA |  -->
+            {{testimonial.level}} - 
+            {{testimonial.year}}
+          </p>
+      </div>
+    </li>
+    {% endfor %}
+
+    <div style="text-align: center;">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </ul>
+</div>
+<script src="{% static 'js/index.js' %}"></script>
+
+{% endblock%}

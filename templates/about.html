@@ -1,0 +1,81 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+
+{% block title %} About us {% endblock %}
+
+{% block styles %} 
+  <link rel="stylesheet" href="{% static 'css/about.css' %}" />
+{% endblock %}
+
+{% block content %} 
+<div class="about-page">
+<h1 style="display: none;"> About us </h1>
+
+<div class="introduction">
+
+  <div class="introduction-left">
+    <p class="introduction-heading"> Introduction </p>
+    <p>Tamakoshi Campus was established in 2056 B.S.
+      It was built with intension to provide quality education for students of
+      Khimti, Gelu, Kirney, Debitar, Tilpung, Bhadaurey, Farpu area. The college 
+      has met its intensions so far. There are more than 200 students who are
+      currently receiving qulaity education from us. During its 20 plus years journey,
+      it has given many faces enlightment. With every year passing, there has been 
+      several improvements in teaching methodologies. Currently <i> Mr. Diwakar Khadka </i>is working as campus chief.
+    </p>
+  </div>
+  <div class="introduction-right">
+    <p>Institute: <span>{{campus.name}}</span></p>
+    <p>Address: <span>{{campus.address}}</span></p>
+    <p>Telephone: <span>{{campus.telephone}}</span></p>
+    <!-- <p>Est Date: <span>{{campus.est_date}}</span></p> -->
+    <p>Est Date: <span>2056 B.S.</span></p>
+    <p>Courses: <span>B. Ed.(4 years) & B.Bs. (4 years)</span></p>
+  </div>
+
+</div>
+<div class="message">
+  <div class="message-first">
+    <h3> Message from Campus Chief </h3>
+    <!-- <p> 
+      My students learn value of time, importance of labour 
+      Welcome to another exciting academic year at our esteemed institution! 
+      As the Principal, I am thrilled to have you join our campus community. 
+      Our campus is a place of knowledge, inspiration, and growth. We are dedicated 
+      to providing you with the best educational experience, empowering you to explore 
+      your passions, and preparing you for a successful future. Our committed faculty and 
+      staff are here to support and guide you every step of the way. Together, let's embrace challenges, 
+      embrace diversity, and make the most of the incredible opportunities that await us. 
+      I look forward to witnessing your achievements and contributions. Welcome, and let's make this year remarkable!
+    </p> -->
+    <p> {{campus_chief.message}}</p>
+    <div class="p-info">
+      <p class="p-name">{{campus_chief.name}}</p>
+      <p class="p-address">{{campus_chief.address}}</p>
+      <p class="p-phone_number">{{campus_chief.phone_number}}</p>
+    </div>
+  </div>
+  <div class="message-second">
+    <h3> Message from Campus Chief</h3>
+    <img src={{campus_chief.image.url}} alt={{campus_chief.name}} />
+  </div>
+</div>
+<div class="school-teams">
+  <h3> Our Teams </h3>
+  <ul class="staff-list">
+    {% for staff in staffs %}
+    <li class="staff">
+      <img src="{{staff.image.url}}" alt="{{staff.name}}"/>
+      <p class="staff-name">{{staff.name}}</p>
+      <p class="staff-designation">{{staff.designation}}</p>
+      <p class="staff-address">{{staff.address}}</p>
+      <p class="staff-phone"> {{staff.phone_number}}</p>
+    </li>
+    {% endfor %}
+  </ul>
+
+</div>
+</div>
+{% endblock %}

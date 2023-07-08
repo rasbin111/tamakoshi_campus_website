@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Besley", Verdana, sans-serif;
+}
+
+.navbar {
+  background-color: rgba(1, 20, 48, 0.9);
+}
+
+.navlist {
+  display: flex;
+}
+
+.logo {
+  width: 5em;
+  padding: 0.7em;
+}
+
+.logo > a > img {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(1, 20, 48, 0.9);
+  border-radius: 50%;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding-right: 0.7em;
+}
+
+.right-nav li {
+  list-style: none;
+  padding: 0.5em;
+}
+
+.right-nav > li + li {
+  margin-left: 1.5em;
+}
+
+.right-nav li a {
+  color: white;
+  text-decoration: none;
+}
+
+.right-nav li a:hover {
+  color: grey;
+}
+
+.about-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  padding: 1em 1.2em;
+  background-color: rgba(1, 20, 48, 0.8);
+  // background-color: rgba(1, 20, 231, 1);
+  margin-top: 0.5em;
+  border-radius: 0 0 5px 5px;
+}
+
+.about-menu > a + a {
+  margin-top: 0.7em;
+}
+
+.about:hover .about-menu {
+  display: flex;
+}
+
+.burger {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 1em;
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+.line {
+  width: 1.5em;
+  margin: 3px;
+  height: 3px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+#sm {
+  display: none;
+}
+
+@media only screen and (max-width: 740px) {
+  body {
+    font-size: 0.8em;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .logo {
+    width: 4em;
+  }
+
+  .right-nav {
+    margin-top: -0.5em;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .right-nav li {
+    width: 100%;
+    background-color: rgba(1, 20, 48, 0.9);
+  }
+
+  .right-nav li:hover {
+    width: 100%;
+    background-color: rgba(1, 20, 48, 0.5);
+  }
+
+  .right-nav > li + li {
+    margin-top: 0.2em;
+    margin-left: 0;
+  }
+
+  .about-menu {
+    background-color: rgba(1, 20, 48, 0.95);
+  }
+}

@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+
+{% block title %} Programmes {% endblock %}
+
+{% block styles %} 
+  <link rel="stylesheet" href="{% static 'css/programmes.css' %}" />
+{% endblock %}
+
+{% block content %} 
+<h1 style="display: none;"> Our Programmes </h3>
+<div class="programmes">
+  <h3> Our Programmes </h3>
+  <ul class="programme-list">
+    {% for programme in programmes %}
+    <li class="programme"> 
+      <section class="programme-first-part">
+        <h4> {{programme.title}}</h4>
+        <p> {{programme.description}} </p>
+        <div class="programme-date">
+          <p> Admission Start: {{programme.admission_start_date}}</p>
+          <p> Admission Deadline: {{programme.admission_deadline}}</p>
+        </div>
+      </section>
+      <section class="programme-second-part">
+        <h4> {{programme.title}}</h4>
+        <img src="{{programme.image.url}}" alt="{{programme.title}}">
+      </section>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+{% endblock %}

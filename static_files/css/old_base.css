@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Besley', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  background-color: rgba(1, 20, 48, 0.9);
+}
+
+.navbar > div + ul {
+  margin-left: 1em;
+}
+
+.navbar > .right-nav {
+  margin-left: auto;
+}
+
+.logo {
+  padding: 0.7em 1em;
+  width: 5em;
+}
+
+.logo img {
+  width: 100%;
+  border: 1px solid rgba(1, 20, 48, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.right-nav{
+  display: flex;
+}
+
+.right-nav  li {
+  list-style: none;
+  padding: 1.525em 1.575em;
+}
+
+.right-nav li a {
+  text-decoration: none;
+  color: white;
+}
+
+.right-nav li a:hover {
+  color: grey;
+}
+
+.burger {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  margin: 0.7em;
+}
+
+.line {
+  width: 1.9em;
+  background-color: whitesmoke;
+  height: 3px;
+  margin: 5px;
+}
+
+.background {
+  background: rgba(1, 20, 48, 0.7) url("../images/bg-yellow.jpg");
+  background-size: cover;
+  background-blend-mode: darken;
+}
+
+.about{
+  display: inline;
+  position: relative;
+}
+
+
+.about-menu{
+  display: none;
+  position: absolute;
+  background-color: rgba(1, 20, 48, 0.9);
+  margin-top: 0.7em;
+  min-width: 160px;
+}
+
+.about:hover .about-menu{
+  display: block;
+
+}
+
+.about-menu > a {
+  color:black;
+  padding: 0.8em 1em;
+  text-decoration: none;
+  display: block;
+
+}
+
+@media only screen and (max-width: 1050px) {
+  body{
+    font-size: 0.8rem;
+  }
+  .right-nav{
+    margin: 2.5em auto 0.3em;
+    display: none;
+    flex-direction: column;
+  }
+
+  .right-nav > li{
+    padding: 0.7em;
+  }
+
+  .right-nav > li:hover{
+    padding: 0.7em;
+  }
+
+  .burger{
+    display: block;
+  }
+
+}
+
+

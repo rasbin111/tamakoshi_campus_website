@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Besley&display=swap" rel="stylesheet"> 
+    <link rel="icon" href="{% static 'images/campus_logo.jpg' %}" type="png" />
+    <link rel="stylesheet" href=" {% static 'css/base.css' %}" />
+    <title>{% block title %}Tamakoshi Campus{% endblock%}</title>
+    {% block styles %}{% endblock %}
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navlist">
+          <div class="logo">
+            <a href="/">
+              <img
+              src="{% static 'images/campus_logo.jpg' %}"
+              alt="school logo"
+            />
+            </a>
+          </div>
+          <ul class="right-nav" id="right-nav">
+            <li><a href="/">Home</a></li>
+            <li class="about">
+              <div class="about-text">
+                <a href="#" class="about-link">About ▾</a>
+              </div>
+              <div class="about-menu">
+                <a href="{% url 'about-us' %}">About us</a>
+                <a href="{% url 'admission-details' %}">Admission Details</a>
+                <a href="{% url 'programmes' %}">Programmes</a>
+              </div>
+            </li>
+            <li class="about">
+              <div class="about-text">
+                <a href="#" class="about-link">Resources ▾</a>
+              </div>
+              <div class="about-menu">
+                  <a href="{% url 'publications' %}">Publications and reports</a>
+                  <a href="{% url 'gallery' %}">Gallery</a>
+              </div>
+            </li>
+            <li><a href="{% url 'notices' %}">Notices</a></li>
+            <li><a href="{% url 'contact' %}">Contact us</a></li>
+          </ul>
+
+
+          <div class="burger" id="burger" onclick="burgerFunction()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+        <ul class="right-nav" id="sm">
+          <li><a href="/">Home</a></li>
+          <li class="about">
+              <div class="about-text">
+                <a href="#" class="about-link">About ▾</a>
+              </div>
+              <div class="about-menu">
+                <a href="{% url 'about-us' %}">About us</a>
+                <a href="{% url 'admission-details' %}">Admission Details</a>
+                <a href="{% url 'programmes' %}">Programmes</a>
+              </div>
+          </li>
+          <li class="about">
+            <div class="about-text">
+              <a href="#" class="about-link">Resources ▾</a>
+            </div>
+            <div class="about-menu">
+                <a href="{% url 'publications' %}">Publications and reports</a>
+                <a href="{% url 'gallery' %}">Gallery</a>
+            </div>
+          </li>
+            <li><a href="{% url 'notices' %}">Notices</a></li>
+            <li><a href="{% url 'contact' %}">Contact us</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>{% block content %}{% endblock %}</main>
+    
+    {% include 'includes/footer.html' %}
+    <script src="{% static 'js/index.js'%}"></script>
+  </body>
+</html>

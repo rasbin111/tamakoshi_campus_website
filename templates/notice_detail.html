@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %} 
+{% load static %} 
+
+{% block title%} Notice {%endblock%} 
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'css/notice-detail.css' %}" />
+{% endblock %} 
+
+{% block content %}
+<div class="notice">
+  <h1 class="notice-heading"> {{notice.title}} </h1>
+    <p class="notice-description"> {{notice.description}} </p>
+    <a class="notice-link" href={{notice.image.url}} ><img class="notice-img" src="{{notice.image.url}}" alt={{notice.title}}/> </a>
+    <p class="notice-date"> Issued Date: {{ notice.issued_date}} </p>
+</div>
+{% endblock%}

@@ -1,0 +1,17 @@
+{% if facility.id % 2 == 0 %}
+<li class="facility"> 
+  <section class="facility-first-part">
+    <h5> {{facility.title}}</h5>
+    <p> {{facility.description}} </p>
+  </section>
+  <img src="{{facility.image.url}}" alt="{{facility.title}}">
+</li>
+{% else %}
+<li class="facility-reverse"> 
+  <section class="facility-first-part">
+    <h5> {{facility.title}}</h5>
+    <p> {{facility.description}} </p>
+  </section>
+  <img src="{{facility.image.url}}" alt="{{facility.title}}">
+</li> -->
+{% endif %}

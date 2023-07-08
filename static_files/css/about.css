@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+  
+:root {
+box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+box-sizing: inherit;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+.about-page{
+    min-height: 100vh;
+}
+
+.introduction{
+    background-color: whitesmoke;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.introduction-left{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1em;
+    margin-right: 1em;
+    width: 55%;
+    justify-content: center;
+}
+
+.introduction-right{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1em;
+    width: 45%;
+    align-items: center;
+
+}
+.introduction-right > p{
+    margin: 0.7em;
+}
+.introduction-right > p > span{
+    color: rgba(1, 20, 48, 0.9);
+    font-style: italic;
+}
+
+.introduction-heading{
+    font-size: 1.2rem;
+    /* font-weight: bold; */
+    margin-bottom: 0.7em;
+    border-bottom: 1px solid rgb(105, 99, 99);
+    padding: .3em 1em;
+}
+
+.introduction > p {
+    border: 2px solid rgba(1, 20, 48, 0.9);
+    padding: 1em;
+    border-radius: 10px;
+    text-align: justify;
+}
+
+
+
+.message {
+    display: flex;
+    padding: 1em 0.5em;
+    background-color: rgba(1, 20, 48, 0.9);
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-first {
+text-align: justify;
+width: 57%;
+margin: auto 0.5em;
+}
+
+
+.message-first > h3 {
+    padding: 0.7em 0 0.5em 0;
+    margin-bottom: 1em;
+    border-bottom: 2px solid rgb(105, 99, 99);
+}
+
+
+.message-second{
+    width: 37%;
+}
+
+.message-second > h3 {
+    display: none;
+    padding-top: 0.7em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.p-info{
+    margin-top: 3em;
+    text-align: right;
+}
+
+.p-address, .p-phone_number{
+    font-style: italic;
+    font-size: 0.9rem;
+    color: rgb(37, 179, 112);
+}
+
+.message-second > img {
+width: 100%;
+/* border: 1px solid rgba(255, 255, 0, 0.7); */
+border: 2px solid rgb(105, 99, 99);
+border-radius: 10px;
+margin-right: 1em;
+}
+
+.school-teams{
+    background-color: whitesmoke;
+    padding: 1em 2em;
+
+}
+
+.school-teams > h3{
+    text-align: center;
+    margin-bottom: 1em;   
+    border-radius: 10px;
+}
+
+.staff-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.staff{
+    padding: 1em;
+    margin: 1em;
+    width: 30%;
+    list-style: none;
+    background-color: rgba(1, 20, 48, 0.9);
+    border: 2px solid rgba(1, 20, 48, 0.9);
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+
+.staff-name{
+    font-weight: bold;
+}
+
+.staff-designation, .staff-address, .staff-phone{
+    font-style: italic;
+    font-size: 0.9rem;
+    color: rgb(37, 179, 112);
+
+    /* margin-bottom: 0.5em; */
+}
+
+.staff > img{
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(1, 20, 48, 0.9);
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 740px) {
+    .message{
+        flex-direction: column-reverse;
+    }
+
+    .message-first, .message-second{
+        width: 80%;
+    }
+
+    .message-first > h3{
+        display: none;
+    }
+
+    .message-second > h3{
+        display: block;
+    }
+    .staff{
+        width: 42%;
+    }
+}
+
+@media only screen and (max-width: 371px) {
+    .staff{width: 84%;}
+
+    .message-first, .message-second{
+        width: 90%;
+    }
+}
+
+
+
+

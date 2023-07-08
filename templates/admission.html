@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+
+{% block title %} Programmes {% endblock %}
+
+{% block styles %} 
+  <link rel="stylesheet" href="{% static 'css/admission.css' %}" />
+{% endblock %}
+
+{% block content %} 
+<h1 style="display: none;"> Admission Details </h1>
+<div class="admission-details">
+  <h3> Admission Details </h3>
+  <p> Admission of new students start at the start of new academic session.
+    More Specifically, People can visit our <a href="{% url 'programmes'%}">
+    programmes</a> page to know more about our programmes and respective 
+    admission deadlines. People are requested to bring the following 
+    documents during admission.
+  </p>
+  <ul class="document-list">
+    <li> Birth Certificate ( For addmission from ECD to class 9)</li>
+    <li> Character Certificate </li>
+    <li> Passport size photo </li>
+  </ul>
+  <p class="note">Note: We don't take new students in class 10 and class 12</p>
+</div>
+
+  
+
+{% endblock %}

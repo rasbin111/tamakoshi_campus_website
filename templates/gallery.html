@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title%} Gallery {% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="gallery-box">
+    <p class="gallery-heading">Gallery</p>
+        <div class="gallery-item">
+            {% for gallery in galleries %}
+            <p class="gallery-title"> {{gallery.title}}</p>
+            <p class="gallery-created-date"> Date: {{gallery.created_date}}</p>
+            <!-- <p class="gallery-description"> {{gallery.description}}</p> -->
+            <div class="gallery-images-list">
+                {% for image_url in gallery.images_list%}
+                    <img class="gallery-image" src="{{image_url}}" alt="{{gallery.title}}">
+                {% endfor %}
+             </div>
+             {% endfor %}
+        </div>
+</div>
+
+
+{% endblock %}
